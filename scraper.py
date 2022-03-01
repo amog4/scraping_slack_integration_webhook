@@ -28,13 +28,13 @@ try:
         for index in range(0,len(anchor_list)):
             anchor = anchor_list[index]
             word_list.append(anchor.text)
-        wl = ''.join(word_list)
+       
         word_dict = {index:str(a)for index,a in enumerate(word_list)}
 
         with open(f'hotshot_{datetime_now }.json', 'w', encoding ='utf8') as json_file:
             json.dump(word_dict, json_file, ensure_ascii = False)
 
-        wl = ''.join(word_list)
+       
         # slack access bot token
         slack_url = "https://hooks.slack.com/services/" + str(slack_hook)   
         headers = {"Content-type": "application/json"}
